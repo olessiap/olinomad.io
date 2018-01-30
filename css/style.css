@@ -1,11 +1,12 @@
 * {
 	padding: 0;
 	margin: 0;
+	box-sizing: border-box;
 }
 
 body {
 	overflow-x: hidden;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif !important;
 	text-rendering: optimizeLegibility !important;
 	-webkit-font-smoothing: antialiased !important;
 }
@@ -113,15 +114,115 @@ p {
 /*HEADER*/
 
 .header {
-	background-image: url(../images/image1.jpg);
-	height: 800px;
+	background-image: url(../images/image1-big.jpg);
+	height: 100%;
 	padding-top:50px;
-	background-position: center;
+	min-height: 679px;
+	background-size: contain;
+	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
+
+	/*background: url('../images/image2-small.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	-o-background-size: cover;
+	height:800px;*/
+	/*min-height: 679px;*/
 }
 
+.cd-headline.rotate-1 .cd-words-wrapper {
+    display: inline-block;
+    perspective: 300px;
+}
+
+.cd-headline.rotate-1 {
+	color:#fff;
+	font-weight: 600;
+	position: absolute;
+	left:40%;
+  	top:50%;
+  	text-align: center;
+  	box-sizing: border-box;
+  	vertical-align: middle;
+}
+
+.cd-headline.rotate-1 b {
+  color:#fff;
+  opacity: 0;
+  transform-origin: 50% 100%;
+  transform: rotateX(180deg);
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  text-align: center;
+}
+
+.cd-headline.rotate-1 b.is-visible {
+  position: relative;
+  opacity: 1;
+  transform: rotateX(0deg);
+  animation: cd-rotate-1-in 1.2s;
+}
+
+.cd-headline.rotate-1 b.is-hidden {
+  transform: rotateX(180deg);
+  animation: cd-rotate-1-out 1.2s;
+}
+
+@keyframes cd-rotate-1-in {
+  0% {
+    transform: rotateX(180deg);
+    opacity: 0;
+  }
+  35% {
+    transform: rotateX(120deg);
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(360deg);
+    opacity: 1;
+  }
+}
+ 
+@keyframes cd-rotate-1-out {
+  0% {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+  35% {
+    transform: rotateX(-40deg);
+    opacity: 1;
+  }
+  65% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotateX(180deg);
+    opacity: 0;
+  }
+}
+
+/*@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+	.cd-headline.rotate-1 {
+		color:#fff;
+		font-weight: 600;
+		position: absolute;
+		left:20%;
+	  	top: 50%;
+	  	text-align: center;
+	  	box-sizing: border-box;
+	  	vertical-align: middle;
+	}
+}
+*/
 /*INTRODUCTION*/
 
 .sub-section {
@@ -143,7 +244,7 @@ p {
 /* TIMELINE */
 
 .timeline {
-	background-image: url(../images/image2.jpg);
+	background-image: url(../images/image2-small.jpg);
 	min-height:400px;
 	background-position:center;
 	background-size:cover;
@@ -164,6 +265,8 @@ p {
 }
 .timeline li {
 	padding: 5px;
+	font-family:'Open Sans', sans-serif !important;
+	font-size:18px;
 }
 
 
@@ -342,4 +445,69 @@ form {
 
 .footer p:hover {
 	opacity:.7;
+}
+
+/*Mobile Styles*/
+@media only screen and (max-width: 400px) {
+	.icon-bar {
+		color:#DDD;
+	}
+
+	.header {
+		background:url(../images/image1-800.jpg);
+		background-size: contain;
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		height:100%;
+	}
+	.cd-intro h1 {
+		font-size:15px;
+	}
+	.cd-intro .cd-headline.rotate-1 {
+		left:35%;
+	}
+
+	.sub-section p {
+		font-size:15px;
+	}
+
+	.timeline li {
+		padding-top: 20px;
+		padding-left:30px;
+	}
+
+	.stat-div {
+		padding-bottom:25px;
+	}
+
+	.projects h2 {
+		text-align: center;
+	}
+	.project-tile {
+		margin-left:-15px;
+		margin-top:25px;
+		width:300px;
+	}
+	.build-together p {
+		font-size:20px;
+	}
+}
+
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) and (max-width: 960px) {
+	/*.header {
+		background:url(../images/image2-small.jpg)
+	}*/
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+	.header {
+    /* The file size of this background image is 93% smaller
+       to improve page load speed on mobile internet connections */
+    background-image: url(../images/image1-small.jpg);
+  }
 }
