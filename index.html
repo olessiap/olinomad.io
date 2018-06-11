@@ -7,290 +7,276 @@
 
         <title>Oli Nomad</title>
         <link rel="shortcut icon" type="image/x-icon" href="icon.ico" />
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="style.css">
+        
         <!-- FontAwesome -->
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-        
-        <!-- Bootstrap -->
+
+        <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link href="css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Animate --> 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-          
-        
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    
-    <script>
-    function _(id){ return document.getElementById(id); }
-    function submitForm(){
-        _("mybtn").disabled = true;
-        _("status").innerHTML = 'please wait ...';
-        var formdata = new FormData();
-        formdata.append( "n", _("n").value );
-        formdata.append( "e", _("e").value );
-        formdata.append( "m", _("m").value );
-        var ajax = new XMLHttpRequest();
-        ajax.open( "POST", "parser.php" );
-        ajax.onreadystatechange = function() {
-            if(ajax.readyState == 4 && ajax.status == 200) {
-                if(ajax.responseText == "success"){
-                    _("my_form").innerHTML = '<h2>Thanks '+_("n").value+', I will get back to you shortly!</h2>';
-                } else {
-                    _("status").innerHTML = ajax.responseText;
-                    _("mybtn").disabled = false;
+        <link href="css/cutegrids.min.css" rel="stylesheet">
+        <script>
+            function _(id){ return document.getElementById(id); }
+            function submitForm(){
+                _("mybtn").disabled = true;
+                _("status").innerHTML = 'please wait ...';
+                var formdata = new FormData();
+                formdata.append( "n", _("n").value );
+                formdata.append( "e", _("e").value );
+                formdata.append( "m", _("m").value );
+                var ajax = new XMLHttpRequest();
+                ajax.open( "POST", "parser.php" );
+                ajax.onreadystatechange = function() {
+                    if(ajax.readyState == 4 && ajax.status == 200) {
+                        if(ajax.responseText == "success"){
+                            _("my_form").innerHTML = '<h2>Thanks '+_("n").value+', I will get back to you shortly!</h2>';
+                        } else {
+                            _("status").innerHTML = ajax.responseText;
+                            _("mybtn").disabled = false;
+                        }
+                    }
                 }
+                ajax.send( formdata );
             }
-        }
-        ajax.send( formdata );
-    }
-    </script>  
-
+        </script>  
     </head>
-<body>
 
-<!-- NAVIGATION -->
+    <body>
+        <!-- NAVIGATION -->
 
-<div id="myNavbar" class="navbar navbar-transparent navbar-fixed-top animated fadeInDown" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <a href="#" class="navbar-brand">Oli Nomad</a>
+    <div id="myNavbar" class="navbar navbar-transparent navbar-fixed-top animated fadeInDown" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+    
+                <a href="#" class="navbar-brand">Oli Nomad</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right" id="top">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">contact</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav navbar-right" id="top">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">contact</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
-
-<!-- END NAVIGATION -->
+    </div>  
 
 <!-- HEADER-->
-
-    <div class="container-fluid">
-        <div class="row header" id="header"> 
-            <div class="col-lg-12 col-md-12">
-            </div>
-            <section class="cd-intro">
-                <h1 class="cd-headline rotate-1">
-                    <span>Need a</span>
-                    <span class="cd-words-wrapper">
-                        <b class="is-visible">website?</b>
-                        <b>web app?</b>
-                        <b>web design?</b>
-                    </span>
-                </h1>
-            </section>
-        </div>
+    <div class="header">
+        <section class="cd-intro">
+            <h1 class="cd-headline">Need a Website?</h1>   
+        </section>
+        <picture>
+            <source 
+                media="(min-width: 900px)"
+                srcset="images_src/image1-lg_2x.jpg 1x, images_src/image1-lg_1x.jpg 2x" >
+            <source
+                media="(min-width: 601px)"
+                srcset="images_src/image1C-lg_2x.jpg 2x, images_src/image1C-lg_1x.jpg 1x" >
+            <img 
+                src="images_src/image1C-sm_1x.jpg" alt="pic of Olessia Potapova in Medellin">
+        </picture>
     </div>
-
-<!-- END OF HEADER -->
 
 <!-- INTRODUCTION / FIRST SUB SECTION -->
 
-<div class="sub-section sub-one" id="about">
-    <div class="container">
-        <p>Hi, I'm Oli. I travel the world and work on coding projects as a digital nomad.</p>
+    <div class="sub-section sub-one" id="about">
+        <div class="container">
+            <p>Hi, I'm Oli. I travel the world and work on coding projects as a digital nomad.</p> 
+        </div>
     </div>
-</div>
-
-
-<!-- END OF INTRO -->
 
 <!-- TIMELINE -->
-
-<div class="timeline">
-    <div class="container">
-        <h2>My Location Independence Journey</h2>
-        <div class="row">
-            <div class="col-lg-5 col-md-5">
-                <ul>
+    <div class="timeline">
+        <div class="container timeline-info" style="width:100%; padding-left:40px; padding-right:40px;">
+            <h2><span>My Location Independence Journey</span></h2>
+            <div class='row'>
+                <div class='col-lg-5 col-md-5 left-timeline'>
                     <li>
                         <strong>2013</strong>
-                            - Graduated UC Davis with a degree in International Relations and a minor in Psychology.
-                    </li>
-                    <li>
-                        <strong>2013</strong> 
-                            - Started real first job as a business analyst. Wrote out business logic in XML. Had a lot of downtime so started learning HTML/CSS at work out of boredom
+                            - Graduated UC Davis with a degree in International Relations and Psychology.
+                            <br>
+                            Started first job as a business systems analyst. Had a lot of downtime so started learning HTML/CSS at work out of boredom.
                     </li>
                     <li>
                         <strong>2014</strong> 
-                            - Built first website following online tutorials. Got a new job at a startup building white label mobile apps using a combination of scripts and tools. Learned git, JIRA, mobile app production process and submission, Apple Store rules, Google Play store rules etc etc
+                            - Built first website following online tutorials. Got a new job at a startup developing white label mobile apps using a combination of scripts and tools.
                     </li>
-                </ul>
-            </div>
-            <div class="col-lg-2 col-md-2">
-            </div>
-            <div class="col-lg-5 left col-md-5 right">
-                <ul>
                     <li>
                         <strong>2015</strong> 
-                            - Read Tim Ferris 4 hour work week, really started thinking about how to be location indepenedent.
+                            - Read the Tim Ferris 4hr Work Week while on a family trip to Thailand. Started thinking about how to become location indepenedent while on a long boat trip to Kho Phi Phi Island. I realized that programming would allow me to create the office-free lifestyle I wanted to create for myself. I started hitting the books, hard.
                     </li>
+                </div>
+                <div class='col-lg-2 col-md-2'></div>
+                <div class='col-lg-5 left col-md-5 right right-timeline'> 
                     <li>
                         <strong>2016</strong> 
-                            - Got promoted to Production Support Engineer and got to work closely with product and every engineering team. Went to Amsterdam to learn more about microservices. Completed a Programming Nanodegree on Udacity. 
+                            - Got promoted to Production Support Engineer and was sent to Amsterdam to learn about microservices. Completed a Web Development Programming Nanodegree.
                     </li>
                     <li>
                         <strong>2017</strong> 
-                            - Got laid off. Attended a coding bootcamp in Medellin, Colombia. Started traveling South America and working on coding projects on the road.
+                            - The start of my <i>learning vacation(!)</i> where I started traveling South America and working on coding projects on the road. In Colombia I built a Rails Web App called KnowYourself that helps you write your own autobiography. Then I went on a solo backpacking trip through Peru and built a yoga portfolio website for a girl I met at a yoga hostel.
                     </li>
-                </ul>
+                    <br>
+                    <li>
+                        <strong>2018</strong> 
+                            - Spent 3 months drinking coconuts on the beach in Brazil. Came back to Colombia where I learned React and built a couple projects. Now I'm in Argentina, where the coding my way through South America adventure continues! 
+                    </li>
+                </div>  
+            </div> 
+        </div>
+        <picture>
+            <source 
+                media="(min-width: 900px)"
+                srcset="images_src/image2-lg_2x.jpg 1x, images_src/image2-lg_1x.jpg 2x" >
+            <source
+                media="(min-width: 601px)"
+                srcset="images_src/image2C-lg_2x.jpg 2x, images_src/image2C-lg_1x.jpg 1x" >
+            <img 
+                src="images_src/image2C-sm_1x.jpg" alt="pic of Olessia Potapova in Medellin"
+                id="img2">
+            
+        </picture>
+    </div>
+
+    <!-- STATS -->
+
+    <div class="stats">
+        <div class="container">
+            <div class="col-lg-3 col-md-3">
+                <div class=stat-div>
+                    <div class="number">15</div>
+                    <h5>Months Traveled</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class=stat-div>
+                    <div class="number">7</div>
+                    <h5>Countries Visited</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class=stat-div>
+                    <div class="number">4</div>
+                    <h5>Websites Built</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-3">
+                <div class=stat-div>
+                    <div class="number">40</div>
+                    <h5>Hours of Salsa Danced</h5>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<!-- END TIMELINE -->
-
-<!-- STATS -->
-
-<div class="stats">
-    <div class="container">
-        <div class="col-lg-3 col-md-3">
-            <div class=stat-div>
-                <div class="number">10</div>
-                <h5>Months Traveled</h5>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3">
-            <div class=stat-div>
-                <div class="number">7</div>
-                <h5>Countries Visited</h5>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3">
-            <div class=stat-div>
-                <div class="number">4</div>
-                <h5>Websites Built</h5>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3">
-            <div class=stat-div>
-                <div class="number">30</div>
-                <h5>Hours of Salsa Danced</h5>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- END OF STATS -->
 
 <!-- PROJECTS -->
 
-<div class="projects" id="projects">
-    <div class="container project-container">
-        <h2>My Latest Projects</h2>
-        <div class="col-lg-4 col-md-4 project-tile">
-            <a target="_blank" alt="knowyourself" title="KnowYourself" href="https://peaceful-plateau-84399.herokuapp.com/users/sign_in">
-                <img class="project-image project-image1" src="images/knowyourself.jpg" style="width:100%">
-                <div class="middle middle1">
-                    <div class="text">Know Yourself</div>    
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-md-4 project-tile">
-            <a target="_blank" alt="PearlLeePortfolio" title="PearlLee" href="https://olessiap.github.io/pearlee.github.io">
-                <img class="project-image" src="images/pearl_lee.jpg" style="width:100%">
-                <div class="middle middle2">
-                    <div class="text">Pearl Lee</div>    
-                </div>
-            </a>
-        </div>
-        <div class="col-lg-4 col-md-4 project-tile">
-            <a href="#">
-                <img class="project-image" src="images/timer.jpg" style="width:100%">
-                <div class="middle">
-                    <div class="text">Pomo Cal</div>    
-                </div>
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- END PROJECTS -->
-
-<!-- LETS BUILD TOGETHER -->
-
-<div class="build-together" id="contact">
-    <div class="container">
-        <p>Let's make something awesome together.</p>
-    </div>
-</div>
-
-<!-- FORM -->
-
-<form id="my_form" onsubmit="submitForm(); return false;">
-  <div class="form-group">
-    <div class="container">
-        <h2>Get in touch</h2>
-        <p>Let's talk about your project</p>
-        <div class="row">
-            <div class="col-lg-6">
-                <input type="text" class="form-control" id="n" placeholder="Your name" required="">
+    <div class="projects" id="projects">
+        <div class="container project-container">
+            <h2>My Latest Projects</h2>
+            <div class="col-lg-4 col-md-4 project-tile">
+                <a target="_blank" alt="knowyourself" title="KnowYourself" href="https://peaceful-plateau-84399.herokuapp.com/users/sign_in">
+                    <img class="project-image project-image1" src="images_src/knowyourself.png" style="width:100%">
+                    <div class="middle middle1">
+                        <div class="text">Know Yourself</div>    
+                    </div>
+                </a>
             </div>
-            <div class="col-lg-6">
-                <input type="email" class="form-control" id="e" placeholder="Your E-mail" required="">
+            <div class="col-lg-4 col-md-4 project-tile">
+                <a target="_blank" alt="PearlLeePortfolio" title="PearlLee" href="https://olessiap.github.io/pearlee.github.io">
+                    <img class="project-image" src="images_src/pearl_lee.png" style="width:100%">
+                    <div class="middle middle2">
+                        <div class="text">Pearl Lee</div>    
+                    </div>
+                </a>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="form-group">
-                    <textarea class="form-control" id="m" rows="5" placeholder="Your message" required=""></textarea>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-10">
-            </div>
-            <div class="col-lg-2 left">
-                <button type="submit" id="mybtn" class="btn btn-secondary btn-lg">Submit</button><span id="status"></span>
+            <div class="col-lg-4 col-md-4 project-tile">
+                <a href="#">
+                    <img class="project-image" src="images_src/timer.jpg" style="width:100%">
+                    <div class="middle">
+                        <div class="text">Pomo Cal</div>    
+                    </div>
+                </a>
             </div>
         </div>
     </div>
-  </div>
-</form>
-
-<!-- END FORM -->
-
-<!-- FOOTER -->
-
-<div class="footer">
-    <div class="container footer-section">
-       <a target="_blank" alt="github" title="Github" href="https://github.com/olessiap"><i class="fa fa-github"></i></a>
-       <a target="_blank" alt="linkedin" title="Linkedin" href="https://www.linkedin.com/in/olessia-potapova-3b887171/"><i class="fa fa-linkedin"></i></a>
-       <a target="_blank" alt="instagram" title="instagram" href="https://www.instagram.com/newstampwhodis/"><i class="fa fa-instagram"></i></a>
-       <a target="_blank" alt="facebook" title="Facebook" href="https://www.facebook.com/oleeeessia"><i class="fa fa-facebook"></i></a>
-       <a target="_blank" alt="github" title="Github" href="https://github.com/olessiap"><p>&copy; 2018 Olessia Potapova<p></a>
-    </div>
-</div>
-
-
-
-
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <!-- LETS BUILD TOGETHER -->
+
+    <div class="build-together" id="contact">
+        <div class="container">
+            <p>Let's make something awesome together.</p>
+        </div>
+    <picture>
+        <source 
+            media="(min-width: 601px)"
+            srcset="images_src/image3-lg_2x.jpg 1x, images_src/image3-lg_1x.jpg 2x" >
+        <!-- <source
+            media="(min-width: 601px)"
+            srcset="images_src/image3-lg_2x.jpg 2x" > -->
+        <img 
+            src="images_src/image3-sm_1x.jpg" alt="pic of Olessia Potapova in Medellin">
+    </picture>
+    </div>
+
+    <!-- FORM -->
+
+    <form id="my_form" onsubmit="submitForm(); return false;">
+        <div class="form-group">
+          <div class="container">
+              <h2>Get in touch</h2>
+              <p>Let's talk about your project</p>
+              <div class="row">
+                  <div class="col-lg-6">
+                      <input type="text" class="form-control" id="n" placeholder="Your name" required="">
+                  </div>
+                  <div class="col-lg-6">
+                      <input type="email" class="form-control" id="e" placeholder="Your E-mail" required="">
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-12">
+                      <div class="form-group">
+                          <textarea class="form-control" id="m" rows="5" placeholder="Your message" required=""></textarea>
+                      </div>
+                  </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-10">
+                  </div>
+                  <div class="col-lg-2 left">
+                      <button type="submit" id="mybtn" class="btn btn-secondary btn-lg">Submit</button><span id="status"></span>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </form>
+      
+      <!-- END FORM -->
+      
+      <!-- FOOTER -->
+      
+    <div class="footer">
+        <div class="container footer-section">
+            <a target="_blank" alt="github" title="Github" href="https://github.com/olessiap"><i class="fa fa-github"></i></a>
+            <a target="_blank" alt="linkedin" title="Linkedin" href="https://www.linkedin.com/in/olessia-potapova-3b887171/"><i class="fa fa-linkedin"></i></a>
+            <a target="_blank" alt="instagram" title="instagram" href="https://www.instagram.com/newstampwhodis/"><i class="fa fa-instagram"></i></a>
+            <a target="_blank" alt="facebook" title="Facebook" href="https://www.facebook.com/oleeeessia"><i class="fa fa-facebook"></i></a>
+            <a target="_blank" alt="github" title="Github" href="https://github.com/olessiap"><p>&copy; 2018 Olessia Potapova<p></a>
+        </div>
+    </div>
+      
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="app.js"></script>
   </body>
   </html>
