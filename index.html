@@ -1,51 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-        <title>Oli Nomad</title>
-        <link rel="shortcut icon" type="image/x-icon" href="icon.ico" />
-        <link rel="stylesheet" href="style.css">
-        
-        <!-- FontAwesome -->
-        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <title>Oli Nomad</title>
+    <link rel="shortcut icon" type="image/x-icon" href="icon.ico" />
+    <link rel="stylesheet" href="style.css">
 
-        <!-- Animate --> 
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-        <link href="css/cutegrids.min.css" rel="stylesheet">
-        <script>
-            function _(id){ return document.getElementById(id); }
-            function submitForm(){
-                _("mybtn").disabled = true;
-                _("status").innerHTML = 'please wait ...';
-                var formdata = new FormData();
-                formdata.append( "n", _("n").value );
-                formdata.append( "e", _("e").value );
-                formdata.append( "m", _("m").value );
-                var ajax = new XMLHttpRequest();
-                ajax.open( "POST", "parser.php" );
-                ajax.onreadystatechange = function() {
-                    if(ajax.readyState == 4 && ajax.status == 200) {
-                        if(ajax.responseText == "success"){
-                            _("my_form").innerHTML = '<h2>Thanks '+_("n").value+', I will get back to you shortly!</h2>';
-                        } else {
-                            _("status").innerHTML = ajax.responseText;
-                            _("mybtn").disabled = false;
-                        }
+    <!-- FontAwesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+    <link href="css/cutegrids.min.css" rel="stylesheet">
+    <script>
+        function _(id) { return document.getElementById(id); }
+        function submitForm() {
+            _("mybtn").disabled = true;
+            _("status").innerHTML = 'please wait ...';
+            var formdata = new FormData();
+            formdata.append("n", _("n").value);
+            formdata.append("e", _("e").value);
+            formdata.append("m", _("m").value);
+            var ajax = new XMLHttpRequest();
+            ajax.open("POST", "parser.php");
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    if (ajax.responseText == "success") {
+                        _("my_form").innerHTML = '<h2>Thanks ' + _("n").value + ', I will get back to you shortly!</h2>';
+                    } else {
+                        _("status").innerHTML = ajax.responseText;
+                        _("mybtn").disabled = false;
                     }
                 }
-                ajax.send( formdata );
             }
-        </script>  
-    </head>
+            ajax.send(formdata);
+        }
+    </script>
+</head>
 
-    <body>
-        <!-- NAVIGATION -->
+<body>
+    <!-- NAVIGATION -->
 
     <div id="myNavbar" class="navbar navbar-transparent navbar-fixed-top animated fadeInDown" role="navigation">
         <div class="container">
@@ -55,24 +57,32 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-    
+
                 <a href="#" class="navbar-brand">Oli Nomad</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right" id="top">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">contact</a></li>
+                    <li>
+                        <a href="#header">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#contact">contact</a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </div>  
+    </div>
 
-<!-- HEADER-->
+    <!-- HEADER-->
     <div class="header">
         <section class="cd-intro">
-            <h1 class="cd-headline">Need a Website?</h1>   
+            <h1 class="cd-headline">Need a Front End Developer?</h1>
         </section>
         <!-- <picture>
             <source 
@@ -86,52 +96,65 @@
         </picture> -->
     </div>
 
-<!-- INTRODUCTION / FIRST SUB SECTION -->
+    <!-- INTRODUCTION / FIRST SUB SECTION -->
 
     <div class="sub-section sub-one" id="about">
         <div class="container">
-            <p>Hi, I'm Oli. I travel the world and work on coding projects as a digital nomad.</p> 
+            <p>Hi, I'm Oli. I travel the world and work on coding projects as a digital nomad.</p>
         </div>
     </div>
 
-<!-- TIMELINE -->
+    <!-- TIMELINE -->
     <div class="timeline">
         <div class="container timeline-info" style="width:100%; padding-left:40px; padding-right:40px;">
-            <h2><span>My Location Independence Journey</span></h2>
+            <h2>
+                <span>My Location Independence Journey</span>
+            </h2>
             <div class='row'>
                 <div class='col-lg-5 col-md-5 left-timeline'>
                     <li>
                         <strong>2013</strong>
-                            - Graduated UC Davis with a degree in International Relations and Psychology.
-                            <br>
-                            Started first job as a business systems analyst. Had a lot of downtime so started learning HTML/CSS at work out of boredom.
+                        - Graduated UC Davis with a degree in Environmental International Relations and Psychology.
+                        <br> Started first job as a business systems analyst. Had a lot of downtime so started learning HTML/CSS
+                        at work out of boredom.
                     </li>
                     <li>
-                        <strong>2014</strong> 
-                            - Built first website following online tutorials. Got a new job at a startup developing white label mobile apps using a combination of scripts and tools.
+                        <strong>2014</strong>
+                        - Built first website following online tutorials. Got a new job at a startup developing white label mobile apps using a combination
+                        of scripts and tools.
                     </li>
                     <li>
-                        <strong>2015</strong> 
-                            - Read the Tim Ferris 4hr Work Week while on a family trip to Thailand. Started thinking about how to become location indepenedent while on a long boat trip to Kho Phi Phi Island. I realized that programming would allow me to create the office-free lifestyle I wanted to create for myself. I started hitting the books, hard.
+                        <strong>2015</strong>
+                        - Read the Tim Ferris 4hr Work Week while on a family trip to Thailand. Started thinking about how to become location indepenedent
+                        while on a long boat trip to Kho Phi Phi Island. I realized that programming would allow me to create
+                        the office-free lifestyle I wanted to create for myself. I started hitting the books, hard.
                     </li>
                 </div>
                 <div class='col-lg-2 col-md-2'></div>
-                <div class='col-lg-5 left col-md-5 right right-timeline'> 
+                <div class='col-lg-5 left col-md-5 right right-timeline'>
                     <li>
-                        <strong>2016</strong> 
-                            - Got promoted to Production Support Engineer and was sent to Amsterdam to learn about microservices. Completed a Web Development Programming Nanodegree.
+                        <strong>2016</strong>
+                        - Got promoted to Production Support Engineer and was sent to Amsterdam to learn about microservices. Completed a Web Development
+                        Programming Nanodegree.
                     </li>
                     <li>
-                        <strong>2017</strong> 
-                            - The start of my <i>learning vacation</i> where I started traveling South America and working on coding projects on the road. In Colombia I built a Rails Web App called KnowYourself that helps you write your own autobiography. Then I went on a solo backpacking trip through Peru and built a yoga portfolio website for a girl I met at a yoga hostel.
+                        <strong>2017</strong>
+                        - The start of my
+                        <i>learning vacation</i> where I started traveling South America and working on coding projects on the
+                        road. In Colombia I built a Rails Web App called KnowYourself that helps you write your own autobiography.
+                        Then I went on a solo backpacking trip through Peru and built a yoga portfolio website for a girl
+                        I met at a yoga hostel.
                     </li>
                     <br>
                     <li>
-                        <strong>2018</strong> 
-                            - Spent 3 months drinking coconuts on the beach in Brazil. Came back to Colombia where I learned React and built a couple projects. Now I'm in Argentina, where the coding my way through South America adventure continues! 
+                        <strong>2018</strong>
+                        - Spent first 3 months drinking coconuts on the beach in Brazil. Came back to Colombia where I learned React and built a
+                        responsive website for a cannabis compliance startup from California. Now I'm in Argentina drinking
+                        delicious Malbec wine and actively looking for remote frontend developer opportunities. The coding
+                        my way through South America adventure continues!
                     </li>
-                </div>  
-            </div> 
+                </div>
+            </div>
         </div>
     </div>
 
@@ -141,19 +164,19 @@
         <div class="container">
             <div class="col-lg-3 col-md-3">
                 <div class=stat-div>
-                    <div class="number">15</div>
+                    <div class="number">18</div>
                     <h5>Months Traveled</h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3">
                 <div class=stat-div>
-                    <div class="number">7</div>
+                    <div class="number">8</div>
                     <h5>Countries Visited</h5>
                 </div>
             </div>
             <div class="col-lg-3 col-md-3">
                 <div class=stat-div>
-                    <div class="number">4</div>
+                    <div class="number">6</div>
                     <h5>Websites Built</h5>
                 </div>
             </div>
@@ -166,38 +189,41 @@
         </div>
     </div>
 
-<!-- PROJECTS -->
+    <!-- PROJECTS -->
 
     <div class="projects" id="projects">
         <div class="container project-container">
             <h2>My Latest Projects</h2>
             <div class="col-lg-4 col-md-4 project-tile">
+                <a target="_blank" alt="New Era Compliance" title="NewEraCompliance" href="http://www.neweracompliance.net/">
+                    <img class="project-image" src="images_src/NewEraCompliance.png" style="width:100%">
+                    <div class="middle middle2">
+                        <div class="text">New Era Compliance</div>
+                        <div class="stack">Responsive Website</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 project-tile">
+                <a target="_blank" alt="Adopt Me" title="AdoptMe" href="https://github.com/olessiap/olessiap.github.io-adoptme">
+                    <img class="project-image" src="images_src/AdoptMe.png" style="width:100%">
+                    <div class="middle">
+                        <div class="text">Adopt Me</div>
+                        <div class="stack">React App</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-md-4 project-tile">
                 <a target="_blank" alt="knowyourself" title="KnowYourself" href="https://peaceful-plateau-84399.herokuapp.com/users/sign_in">
                     <img class="project-image project-image1" src="images_src/knowyourself.png" style="width:100%">
                     <div class="middle middle1">
-                        <div class="text">Know Yourself</div>    
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 project-tile">
-                <a target="_blank" alt="PearlLeePortfolio" title="PearlLee" href="https://olessiap.github.io/pearlee.github.io">
-                    <img class="project-image" src="images_src/pearl_lee.png" style="width:100%">
-                    <div class="middle middle2">
-                        <div class="text">Pearl Lee</div>    
-                    </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 project-tile">
-                <a href="#">
-                    <img class="project-image" src="images_src/timer.jpg" style="width:100%">
-                    <div class="middle">
-                        <div class="text">Pomo Cal</div>    
+                        <div class="text">Know Yourself</div>
+                        <div class="stack">Rails App</div>
                     </div>
                 </a>
             </div>
         </div>
     </div>
-    
+
     <!-- LETS BUILD TOGETHER -->
 
     <div class="build-together" id="contact">
@@ -210,51 +236,64 @@
 
     <form id="my_form" onsubmit="submitForm(); return false;">
         <div class="form-group">
-          <div class="container">
-              <h2>Get in touch</h2>
-              <p>Let's talk about your project</p>
-              <div class="row">
-                  <div class="col-lg-6">
-                      <input type="text" class="form-control" id="n" placeholder="Your name" required="">
-                  </div>
-                  <div class="col-lg-6">
-                      <input type="email" class="form-control" id="e" placeholder="Your E-mail" required="">
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-lg-12">
-                      <div class="form-group">
-                          <textarea class="form-control" id="m" rows="5" placeholder="Your message" required=""></textarea>
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                  <div class="col-lg-10">
-                  </div>
-                  <div class="col-lg-2 left">
-                      <button type="submit" id="mybtn" class="btn btn-secondary btn-lg">Submit</button><span id="status"></span>
-                  </div>
-              </div>
-          </div>
+            <div class="container">
+                <h2>Get in touch</h2>
+                <p>Let's talk about your project</p>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <input type="text" class="form-control" id="n" placeholder="Your name" required="">
+                    </div>
+                    <div class="col-lg-6">
+                        <input type="email" class="form-control" id="e" placeholder="Your E-mail" required="">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="form-group">
+                            <textarea class="form-control" id="m" rows="5" placeholder="Your message" required=""></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10">
+                    </div>
+                    <div class="col-lg-2 left">
+                        <button type="submit" id="mybtn" class="btn btn-secondary btn-lg">Submit</button>
+                        <span id="status"></span>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
-      
-      <!-- END FORM -->
-      
-      <!-- FOOTER -->
-      
+
+    <!-- END FORM -->
+
+    <!-- FOOTER -->
+
     <div class="footer">
         <div class="container footer-section">
-            <a target="_blank" alt="github" title="Github" href="https://github.com/olessiap"><i class="fa fa-github"></i></a>
-            <a target="_blank" alt="linkedin" title="Linkedin" href="https://www.linkedin.com/in/olessia-potapova-3b887171/"><i class="fa fa-linkedin"></i></a>
-            <a target="_blank" alt="instagram" title="instagram" href="https://www.instagram.com/newstampwhodis/"><i class="fa fa-instagram"></i></a>
-            <a target="_blank" alt="facebook" title="Facebook" href="https://www.facebook.com/oleeeessia"><i class="fa fa-facebook"></i></a>
-            <a target="_blank" alt="github" title="Github" href="https://github.com/olessiap"><p>&copy; 2018 Olessia Potapova</p> <p>olessia.potapova@gmail.com</p></a>
+            <a target="_blank" alt="github" title="Github" href="https://github.com/olessiap">
+                <i class="fa fa-github"></i>
+            </a>
+            <a target="_blank" alt="linkedin" title="Linkedin" href="https://www.linkedin.com/in/olessia-potapova-3b887171/">
+                <i class="fa fa-linkedin"></i>
+            </a>
+            <a target="_blank" alt="instagram" title="instagram" href="https://www.instagram.com/newstampwhodis/">
+                <i class="fa fa-instagram"></i>
+            </a>
+            <a target="_blank" alt="facebook" title="Facebook" href="https://www.facebook.com/oleeeessia">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a target="_blank" alt="github" title="Github" href="https://github.com/olessiap">
+                <p>&copy; 2018 Olessia Potapova</p>
+                <p>olessia.potapova@gmail.com</p>
+            </a>
         </div>
     </div>
-      
-        
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="app.js"></script>
-  </body>
-  </html>
+</body>
+
+</html>

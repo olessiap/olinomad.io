@@ -261,11 +261,17 @@ p {
   background-color: rgb(229, 227, 235);
   color:#666;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   font-family:'Open Sans', sans-serif;;
   padding: 16px 32px;
 }
 
+.stack {
+	padding: 10px 30px;
+    background-color: darkgrey;
+	font-weight: 700;
+	color:white;
+}
 /*LETS BUILD TOGETHER*/
 
 .build-together {
@@ -414,7 +420,7 @@ form {
 		background-attachment: fixed;
 	}
 	.cd-headline {
-        font-size:50px;
+        font-size:70px;
     }
 
     .sub-section p {
